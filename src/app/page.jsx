@@ -9,7 +9,7 @@ import {
 const Page = async () => {
   const topAnime = await getAnimeResponse("top/anime", "limit=12");
 
-  //map dari raw data 
+  //map dari raw data
   let recomendedAnime = await getNestedAnimeResponse(
     "recommendations/anime",
     "entry"

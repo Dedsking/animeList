@@ -1,5 +1,4 @@
-import dynamic from "next/dynamic";
-import { Gabarito, Inter } from "next/font/google";
+import { Gabarito } from "next/font/google";
 import Navbar from "../components/Navbar";
 import "./globals.css";
 

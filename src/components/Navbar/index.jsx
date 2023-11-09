@@ -10,7 +10,7 @@ const Navbar = () => {
           Dedsking Anime
         </Link>
         <InputSearch />
-        <ActionButton />
+        {/* <ActionButton /> */}
       </div>
     </header>
   );

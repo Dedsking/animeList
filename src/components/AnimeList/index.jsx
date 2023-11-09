@@ -20,7 +20,7 @@ const AnimeList = ({ api }) => {
                 priority
               />
               <h3 className="font-bold md:text-xl text-md p-4">
-                {anime.title}
+                {anime.title} - {anime.year}
               </h3>
             </Link>
           </div>
