@@ -18,7 +18,7 @@ export const reproduce = (data, gap) => {
   const last = first + gap;
 
   const res = {
-    data: data.slice(first, last),
+    data: data?.slice(first, last),
   };
 
   return res;
