@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ActionButton from "./ActionButton";
 import InputSearch from "./InputSearch";
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
           Dedsking Anime
         </Link>
         <InputSearch />
+        <ActionButton />
       </div>
     </header>
   );

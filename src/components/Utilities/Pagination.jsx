@@ -19,7 +19,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
   };
   return (
     <>
-      <div className="flex justify-center items-center py-4 px-2 gap-4 text-color-primary text-2xl">
+      <div className="flex justify-center items-center py-14 px-2 gap-4 text-color-primary text-2xl">
         <button
           onClick={handlePrevPage}
           disabled={page == 1 ? true : false}
