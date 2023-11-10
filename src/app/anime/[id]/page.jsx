@@ -54,7 +54,7 @@ const Page = async ({ params: { id } }) => {
             </tr>
           </thead>
           <tbody>
-            {videoAnime.data.episodes.map((data, i) => {
+            {videoAnime.data?.episodes?.map((data, i) => {
               return (
                 <tr className="border-b" key={i}>
                   <td className="px-2 md:px-6 py-4">{data.episode}</td>
