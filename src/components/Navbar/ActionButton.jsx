@@ -15,7 +15,7 @@ const ActionButton = async () => {
         </Link>
       ) : null}
 
-      <Link href={actionUrl} className="border py-1 px-3 hover:bg-color-secondary hover:text-color-primary transition-all rounded">
+      <Link href={actionUrl} className="border py-1 px-3 hover:bg-color-secondary/30 transition-all rounded">
         {actionLabel}
       </Link>
     </div>
