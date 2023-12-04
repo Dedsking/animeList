@@ -1,17 +1,29 @@
-import { getAnimeResponse, getNestedAnimeResponse } from "@/libs/api-libs";
+import CollectionButton from "@/components/AnimeList/CollectionButton";
+import ButtonBack from "@/components/Dashboard/ButtonBack";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
+import { getAnimeResponse } from "@/libs/api-libs";
+import { authUserSession } from "@/libs/auth-libs";
+import prisma from "@/libs/prisma";
 import Image from "next/image";
-import React from "react";
 
 const Page = async ({ params: { id } }) => {
   const animeDetail = await getAnimeResponse(`anime/${id}`);
   const videoAnime = await getAnimeResponse(`anime/${id}/videos`);
+  const user = await authUserSession();
+  const collection = await prisma.collection.findFirst({
+    where: { user_email: user?.email, anime_mal_id: id },
+  });
+
   return (
     <>
       <div className="px-4 pt-4">
+        <ButtonBack />
         <h3 className="text-color-primary text-2xl">
           {animeDetail.data.title} - {animeDetail.data.year}
         </h3>
+        {!collection && user && (
+          <CollectionButton anime_mal_id={id} user_email={user?.email} />
+        )}
       </div>
       <div className="px-4 pt-4 flex gap-2 text-color-primary/50 overflow-x-auto">
         <div className="w-36 flex flex-col justify-center items-center rounded border border-color-primary/50 p-2">

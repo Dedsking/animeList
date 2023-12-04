@@ -11,10 +11,6 @@ const Page = () => {
   const [topAnime, setTopAnime] = useState([]);
 
   const fetchData = async () => {
-    // const res = await fetch(
-    //   process.env.NEXT_PUBLIC_API_BASE_URL + `/top/anime?page=${page}`
-    // );
-    // const data = await res.json();
     const data = await getAnimeResponse("top/anime", `page=${page}`);
     setTopAnime(data);
   };

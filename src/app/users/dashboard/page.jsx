@@ -12,7 +12,13 @@ const page = async () => {
         <h5>Welcome, {user?.name}</h5>
       </div>
       <div className="w-1/6">
-        <Image src={user?.image} alt="..." width={300} height={300} />
+        <Image
+          src={user?.image}
+          alt="..."
+          width={300}
+          height={300}
+          priority={true}
+        />
       </div>
       <div className="flex flex-wrap py-8 gap-4">
         <Link
