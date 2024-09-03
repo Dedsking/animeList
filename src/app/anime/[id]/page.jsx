@@ -1,4 +1,5 @@
 import CollectionButton from "@/components/AnimeList/CollectionButton";
+import CommentInput from "@/components/AnimeList/CommentInput";
 import ButtonBack from "@/components/Dashboard/ButtonBack";
 import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import { getAnimeResponse } from "@/libs/api-libs";
@@ -22,7 +23,12 @@ const Page = async ({ params: { id } }) => {
           {animeDetail.data.title} - {animeDetail.data.year}
         </h3>
         {!collection && user && (
-          <CollectionButton anime_mal_id={id} user_email={user?.email} />
+          <CollectionButton
+            anime_mal_id={id}
+            user_email={user?.email}
+            anime_image={animeDetail.data.images.webp.image_url}
+            anime_title={animeDetail.data.title}
+          />
         )}
       </div>
       <div className="px-4 pt-4 flex gap-2 text-color-primary/50 overflow-x-auto">
@@ -85,6 +91,10 @@ const Page = async ({ params: { id } }) => {
             })}
           </tbody>
         </table>
+      </div>
+
+      <div className="flex justify-center w-full pb-20"> 
+        <CommentInput />
       </div>
 
       <div>

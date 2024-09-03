@@ -110,7 +110,17 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.CollectionScalarFieldEnum = {
   id: 'id',
   anime_mal_id: 'anime_mal_id',
-  user_email: 'user_email'
+  user_email: 'user_email',
+  anime_image: 'anime_image',
+  anime_title: 'anime_title'
+};
+
+exports.Prisma.CommentScalarFieldEnum = {
+  id: 'id',
+  anime_mal_id: 'anime_mal_id',
+  user_email: 'user_email',
+  comment: 'comment',
+  username: 'username'
 };
 
 exports.Prisma.SortOrder = {
@@ -118,9 +128,15 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
-  Collection: 'Collection'
+  Collection: 'Collection',
+  Comment: 'Comment'
 };
 
 /**

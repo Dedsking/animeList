@@ -1,9 +1,8 @@
-import AnimeCollection from "@/components/AnimeList/AnimeCollection";
 import Header from "@/components/Dashboard/Header";
 import { authUserSession } from "@/libs/auth-libs";
 import prisma from "@/libs/prisma";
+import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 
 const page = async () => {
   const user = await authUserSession();
@@ -21,9 +20,19 @@ const page = async () => {
               key={index}
               href={`/anime/${collec.anime_mal_id}`}
               className="relative border-2 border-color-accent">
-              <Suspense>
-                <AnimeCollection anime_mal_id={collec.anime_mal_id} />
-              </Suspense>
+              <Image
+                src={collec.anime_image}
+                alt={"..."}
+                width={300}
+                height={300}
+                priority={true}
+                className="w-full"
+              />
+              <div className="absolute flex justify-center items-center bottom-0 w-full bg-color-accent h-16 ">
+                <h5 className="text-xl text-center">{collec.anime_title}</h5>
+              </div>
+
+              {/* <AnimeCollection anime_mal_id={collec.anime_mal_id} /> */}
             </Link>
           );
         })}
